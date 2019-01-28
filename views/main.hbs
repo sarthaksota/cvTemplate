@@ -1,0 +1,209 @@
+<!doctype  html>
+
+<html>
+    <head>
+        <title>Sarthak Sota</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="../public/style.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
+        
+    </head>
+    <body>
+        <div id="first-section">
+            <div class="navbar">
+                <label for="toggle">&#9776;</label>
+                <input type="checkbox" id="toggle"/>
+                <div class="nav-items">
+                    <a href="#">Home</a>
+                    <a href="#second-section">{{data.second.heading}}</a>
+                    <a href="#third-section">{{data.third.heading}}</a>
+                    <a href="#fourth-section">{{data.fourth.heading}}</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">More <i class="fa fa-caret-down"></i></button>
+                        <div class="dropdown-menu">
+                            <a href="#fifth-section">{{data.fifth.heading}}</a>
+                            <a href="#sixth-section">{{data.sixth.heading}}</a>
+                            <a href="#seventh-section">{{data.seventh.heading}}</a>
+                            <a href="#eighth-section">{{data.eighth.heading}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="welcome-block">
+                <div class="wb1">{{data.first.greet}}</div>
+                <div class="wb2"><strong>My Name is {{data.first.name}}</strong></div>
+                <div class="wb3">{{data.first.post}}</div>
+            </div>        
+
+
+        </div>
+        <div id="second-section">  
+            <div class="heading ">{{data.second.heading}}</div>
+            <div class="aboutme ">{{data.second.content}}</div>
+            
+            <div class="skills">
+                 {{#each data.second.skills as |skill|}}
+                <div class="each-skill">
+                   <div class="skill-name">{{skill.name}}  <span class="skill-value">{{skill.value}}</span> </div>
+                    <div class="skill-bar">
+                         <div class="progress" style="height:24px; width:{{skill.value}}%"> </div>
+                   </div>
+               </div>
+               {{/each}}     
+            </div>
+                    
+         </div>
+         
+         <div id="third-section" style="color:#fff;background-color: {{data.third.back-color}}">
+             <div class="heading">{{data.third.heading}}</div>
+            <div class="service-wrap">
+              {{#each data.third.services as |service|}}
+                <div class="service-box">
+                    <div class="service-name"><i class="{{service.icon}}"></i><strong>{{service.name}}</strong></div>
+                    <div class="service-desc">{{service.desc}}</div>
+                </div>
+              {{/each}}  
+            </div>
+         </div>
+
+        <div id="fourth-section">
+             <div class="heading">{{data.fourth.heading}}</div>
+             <div class="exp-wrap">
+            {{#each data.fourth.exp-history as |exp|}}
+            <div class="exp-box">
+                {{#if exp.left}}
+                    <div class="exp-name-year exp-name-year-left">
+                {{else}}
+                    <div class="exp-name-year exp-name-year-right">
+                {{/if}}
+                        <div class="exp-name">{{exp.name}}</div>
+                        <div class="exp-year">{{exp.year}}</div>
+                    </div>
+                    <div class="exp-desc">{{exp.desc}}</div>
+                </div>
+              {{/each}}  
+             </div>
+        </div>
+
+
+        <div id="fifth-section">
+            <div class="heading" style="color:darkgoldenrod">{{data.fifth.heading}}</div>
+            <div class="ec-wrap">
+                {{#each data.fifth.list as |ec|}}
+                <div class="ec-year-desc">
+                <div class="ec-year">{{ec.year}}</div>
+                <div class="ec-desc">{{ec.content}}</div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+
+
+        <div id="sixth-section">
+            <div class="heading">{{data.sixth.heading}}</div>
+            <div class="project-wrap">
+                {{#each data.sixth.list as |img|}}
+                <img class="project-img" src={{img.src}} alt="image">
+                {{/each}}
+               
+            </div>
+
+        </div>
+
+       <div id="seventh-section">
+            <div class="heading" style="color:white">{{data.seventh.heading}}</div>
+            <div class="testi-wrap slideshow-container">
+                {{#each data.seventh.list as |testi|}}
+                <div class="testi-image-name-desc mySlides">
+                    <img class="testi-image" src={{testi.img}} alt="image">
+                    <div class="testi-name-desc">
+                        <div class="testi-name">{{testi.name}}</div>
+                        <div class="testi-desc"><q>{{testi.content}}</q></div>
+                    </div>
+                </div>
+                {{/each}}
+                <div style="text-align:center">
+                {{#each data.seventh.list as |testi|}}
+                
+                <span class="dot"></span> 
+                
+                {{/each}}
+                </div>
+            </div>
+        </div> 
+
+        <div id="eighth-section">
+
+            <div class="heading">{{data.eighth.heading}}</div>
+            <div class="my-info">
+                <div class="address-info">Address Info</div>
+                <div class="my-email"><i class="fas fa-envelope"></i>Email</div>
+                <div class="info">{{data.eighth.email}}</div>
+                <div class="my-phone"><i class="fas fa-phone"></i>Phone</div>
+                <div class="info">{{data.eighth.phone}}</div>
+                <a href="/download"><button class="downloadbtn">Download CV <i class="fa fa-download"></i></button></a>
+            </div>
+
+            <div class="their-info">
+                <form method="POST" action="/contact">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name..">
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Your email..">  
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Your number..">
+                    <label for="message"></label>
+                    <textarea id="message" name="message" placeholder="Your Message..." style="height:200px"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+        </div>
+
+        <div id="footer">
+            <div class="footer-icon">
+                <a target="_blank" href="https://www.facebook.com/sarthaksota10"><i class="fab fa-facebook-f"></i></a>
+               <a target="_blank" href="https://github.com/sarthaksota"><i class="fab fa-github"></i></a>
+               <a target="_blank" href="#"><i class="fab fa-google-plus-g"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/sarthak-sota-438515112/"><i class="fab fa-linkedin-in"></i></a>
+               <a target="_blank" href="https://www.instagram.com/sarthak_sota/"><i class="fab fa-instagram"></i></a>
+            </div>
+
+
+        </div>
+
+        <script>
+
+            let slideIndex;
+                window.onload= ()=>{
+                 slideIndex = 0;
+                showSlides();
+                };
+                function showSlides() {
+                let slides = document.getElementsByClassName("mySlides");
+                    for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none"; 
+                    }
+               slideIndex++;
+               if (slideIndex > slides.length) {slideIndex = 1;} 
+                slides[slideIndex-1].style.display = "block"; 
+              setTimeout(showSlides, 2000); 
+              }
+
+        </script>
+
+
+
+
+    </body>
+
+</html>
+
+
+
+
+                   

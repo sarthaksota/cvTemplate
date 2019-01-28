@@ -1,0 +1,174 @@
+{
+    "first": {
+      "background": "IMAGE LINK DALO!!!!!!!!",
+      "greet": "Hi",
+      "name": "Sarthak Sota",
+      "post": "UI/UX Designer"
+    },
+    "second": {
+      "heading": "About Me",
+      "content": "I am a highly engaged individual in all aspects of my life. I invest myself passionately in academics and learning opportunities, also have a keen interest in competitive programming, competitive sports, and physical wellbeing.",
+      "skills": [
+        {
+          "name": "Java",
+          "value": "80"
+        },
+        {
+          "name": "JavaScript",
+          "value": "90"
+        },
+        {
+          "name": "React.js",
+          "value": "30"
+        },
+        {
+          "name": "C++",
+          "value": "60"
+        },
+        {
+          "name": "Node.js",
+          "value": "20"
+        }
+      ]
+    },
+    "third": {
+      "heading": "Services",
+      "services": [
+        {
+          "icon": "fa fa-desktop",
+          "name": "UI/UX Design",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        },
+        {
+          "icon": "fa fa-keyboard",
+          "name": "Mobile Apps",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        },
+        {
+          "icon": "fa fa-keyboard",
+          "name": "Web Developer",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        },
+        {
+          "icon": "fa fa-desktop",
+          "name": "Photoshop",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        },
+        {
+          "icon": "fa fa-desktop",
+          "name": "Software",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        },
+        {
+          "icon": "fa fa-keyboard",
+          "name": "Graphic Design",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipisci ngelit. In euismod faucibus quam. placerat placerat dolor. Vestibulum"
+        }
+      ],
+      "back-color": "#191919"
+    },
+    "fourth": {
+      "heading": "Experience",
+      "exp-history": [
+        {
+          "left": "yes",
+          "name": "UI/UX Designer",
+          "year": "2015-2016",
+          "desc": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+        },
+        {
+          "name": "UI/UX Designer",
+          "year": "2016-2017",
+          "desc": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+        },
+        {
+          "left": "yes",
+          "name": "UI/UX Designer",
+          "year": "2017-2018",
+          "desc": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+        },
+        {
+          "name": "UI/UX Designer",
+          "year": "2015-2016",
+          "desc": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus."
+        }
+      ]
+    },
+    "fifth": {
+      "heading": "Extra-Curricular",
+      "list": [
+        {
+          "year": "2015",
+          "content": "First position in inter college Table Tennis tournament organized at IIT Roorkee, IIT Kanpur, PEC, Thapar, NIT, JUIT."
+        },
+        {
+          "year": "2016",
+          "content": "Third position in 53rd Punjab Open State Table Tennis Championship Organized by Punjab Table Tennis Association."
+        },
+        {
+          "year": "2017",
+          "content": "Gradation(C) Certificate holder in Table Tennis awarded by Sports Directorate, Punjab."
+        },
+        {
+          "year": "2018",
+          "content": "Winner of the fashion show during the Thapar University’s cultural fest."
+        }
+      ]
+    },
+    "sixth": {
+      "heading": "Projects",
+      "list": [
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g1.jpg"
+        },
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g2.jpg"
+        },
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g3.jpg"
+        },
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g4.jpg"
+        },
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g5.jpg"
+        },
+        {
+          "src": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g6.jpg"
+        },
+        {
+          "src": "https://scontent.fdel10-1.fna.fbcdn.net/v/t1.0-9/20139785_1285900224854980_7868442298498917039_n.jpg?_nc_cat=103&_nc_ht=scontent.fdel10-1.fna&oh=349786d7565843804e3a056c121426ec&oe=5CC1BAE6"
+        },
+        {
+          "src": "https://scontent.fdel10-1.fna.fbcdn.net/v/t1.0-9/29196727_1512249625553371_2003008241017028608_n.jpg?_nc_cat=108&_nc_ht=scontent.fdel10-1.fna&oh=469cf7839cfec3148efe88e7fbc6a22e&oe=5CFA1DBB"
+        }
+      ]
+    },
+    "seventh": {
+      "heading": "Testimonials",
+      "background": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/blog.jpg",
+      "list": [
+        {
+          "name": "James James",
+          "content": "Polite sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolorema gnaaliquya merat, sed diam voluptua.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenimad minimveniam, quis nostrud exercitation ullamco sed do eiusmod tempor incididunt",
+          "img": "https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/img.jpg"
+        },
+        {
+          "name": "kuldeepak",
+          "content": "Nulla viverra pharetra sem, eget pulvinar neque pharetra ac int. lorem ipsum Vestibulum. placerat placerat dolor. Vestibulum at dui nunc. Nullam eu elit neque lectus. Aliquam erat volutpat. Nullam ac mattis mi. Donec tincidunt leoelit dictum viverra luctus.",
+          "img": "https://scontent.fdel10-1.fna.fbcdn.net/v/t1.0-9/37410015_1318013364999307_7158782846805475328_n.jpg?_nc_cat=109&_nc_ht=scontent.fdel10-1.fna&oh=2fb3a6062ddd1f31402e7bf0bb4a5a49&oe=5CBD3137"
+        },
+        {
+          "name": "Tushar Sharda",
+          "content": "Polite sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore etdolorema gnaaliquya merat, sed diam voluptua.sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenimad minimveniam, quis nostrud exercitation ullamco sed do eiusmod tempor incididunt",
+          "img": "https://scontent.fdel10-1.fna.fbcdn.net/v/t1.0-9/50309739_2685084974850148_3956658438695550976_n.jpg?_nc_cat=110&_nc_ht=scontent.fdel10-1.fna&oh=e74a9e19397c210f0b28648ebf5ed1b5&oe=5CBB2D95"
+        }
+      ]
+    },
+    "eighth": {
+      "heading": "Contact",
+      "email": "ssarthaksota@gmail.com",
+      "phone": "+91-7009027573",
+      "address": "24H Main Block, 4th cross, California, California - 94203"
+    }
+  }
