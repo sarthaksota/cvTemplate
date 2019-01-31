@@ -62,7 +62,7 @@
             <div class="service-wrap">
               {{#each data.third.services as |service|}}
                 <div class="service-box">
-                    <div class="service-name"><i class="{{service.icon}}"></i><strong>{{service.name}}</strong></div>
+                    <div class="service-name"><i class="{{service.icon}}" style="position:absolute;color:#fff;opacity:.1;font-size:-webkit-xxx-large;"></i><strong>{{service.name}}</strong></div>
                     <div class="service-desc">{{service.desc}}</div>
                 </div>
               {{/each}}  
@@ -109,7 +109,8 @@
                 {{#each data.sixth.list as |img|}}
                 <img class="project-img" src={{img.src}} alt="image">
                 {{/each}}
-               
+                <img class="project-img" src="https://demo.w3layouts.com/demos_new/template_demo/08-09-2018/personal_view_demo_Free/1709990507/web/images/g3.jpg" alt="image">
+
             </div>
 
         </div>
@@ -126,18 +127,17 @@
                     </div>
                 </div>
                 {{/each}}
-                <div style="text-align:center">
+                {{!-- <div style="text-align:center">
                 {{#each data.seventh.list as |testi|}}
                 
                 <span class="dot"></span> 
                 
                 {{/each}}
-                </div>
+                </div> --}}
             </div>
         </div> 
 
         <div id="eighth-section">
-
             <div class="heading">{{data.eighth.heading}}</div>
             <div class="my-info">
                 <div class="address-info">Address Info</div>
@@ -145,23 +145,23 @@
                 <div class="info">{{data.eighth.email}}</div>
                 <div class="my-phone"><i class="fas fa-phone"></i>Phone</div>
                 <div class="info">{{data.eighth.phone}}</div>
-                <a href="/download"><button class="downloadbtn">Download CV <i class="fa fa-download"></i></button></a>
+                <a href="/download"><button class="downloadbtn">Download CV<i class="fa fa-download"></i></button></a>
             </div>
 
             <div class="their-info">
-                <form method="POST" action="/contact">
-                    <label for="name">Name</label>
+                <form id="cform" >
+                    <label for="name">Name*</label>
                     <input type="text" id="name" name="name" placeholder="Your name..">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Your email..">  
-                    <label for="phone">Phone</label>
+                    <label for="email">Email*</label>
+                    <input type="text" id="email" name="mail" placeholder="Your email..">  
+                    <label for="phone">Phone*</label>
                     <input type="text" id="phone" name="phone" placeholder="Your number..">
                     <label for="message"></label>
                     <textarea id="message" name="message" placeholder="Your Message..." style="height:200px"></textarea>
-                    <input type="submit" value="Submit">
+                    <input style="background-color:green;height:10%; width: 20%;border-radius: 29%;padding: 3%"type="button" onclick="doSubmit()" value="Submit"></button>
                 </form>
+                <p id="responseform"></p>
             </div>
-
         </div>
 
         <div id="footer">
@@ -173,29 +173,110 @@
                <a target="_blank" href="https://www.instagram.com/sarthak_sota/"><i class="fab fa-instagram"></i></a>
             </div>
 
-
         </div>
 
         <script>
 
-            let slideIndex;
-                window.onload= ()=>{
-                 slideIndex = 0;
-                showSlides();
-                };
+                
+
+                let slideIndex = 0;
+                
+                let prev_slide = -1;
+                
+                let slides;
+
+                let dots;
+
                 function showSlides() {
-                let slides = document.getElementsByClassName("mySlides");
-                    for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none"; 
-                    }
-               slideIndex++;
-               if (slideIndex > slides.length) {slideIndex = 1;} 
-                slides[slideIndex-1].style.display = "block"; 
-              setTimeout(showSlides, 2000); 
-              }
+                if (slideIndex > slides.length - 1) { slideIndex = 0 }
+                if (prev_slide > -1) {
+                    slides[prev_slide].style.display = "none";
+                    dots[prev_slide].className = dots[prev_slide].className.replace(" active", "");
+                }
 
-        </script>
+                slides[slideIndex].style.display = "block";
+                dots[slideIndex].className += " active";
+                prev_slide = slideIndex;
+                slideIndex++;
+                }
 
+
+    function makeCarousal(child, parent) {
+    slides = document.getElementsByClassName(child);
+    if (slides.length > 1) {
+       var db = document.createElement("div");
+       db.classList.add("dot-box");
+       document.getElementsByClassName(parent)[0].appendChild(db);
+
+       for (let j = 0; j < slides.length; j++) {
+           var d = document.createElement("span");
+           d.classList.add("dot");
+           db.appendChild(d);
+       }
+
+       dots = document.getElementsByClassName("dot");
+       for (let i = 0; i < slides.length; i++) {
+           slides[i].style.display = "none";
+       }
+       Interval = setInterval(showSlides, 2000);
+     }
+        }
+
+        let Interval;
+        window.onload = function() {
+        makeCarousal("mySlides", "slideshow-container");
+        }
+        
+
+        
+            /***************form from form**********/
+
+            function validate(){
+                  let name=document.forms["cform"]["name"].value;
+                  let email=document.forms["cform"]["email"].value;
+                  let phone=document.forms["cform"]["phone"].value;
+                  if(name=="" || phone==""|| email==""){
+                      alert("fields marked with * are required");
+                      return false;
+                  }
+                
+                if(name.length>20){
+                    alert("number of characters in name is limited to 20");
+                    return false;
+                }
+                return true;
+            }
+
+
+            function doSubmit(){
+
+              if(!validate()){return;}
+            let formData = new FormData();
+            let name  =  document.getElementById("name");
+            let email = document.getElementById("email");   
+            let phone = document.getElementById("phone");  
+            let message = document.getElementById("message");
+            
+                let data = {
+                name: name.value,
+                email: email.value,
+                phone:phone.value,
+                message:message.value
+            };
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', "/resume");
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.send(JSON.stringify(data));
+            xhr.onreadystatechange=(event)=>{
+            x=xhr.responseText;
+            document.getElementById("responseform").innerHTML = x;
+            document.getElementById("cform").reset();
+                }
+                }
+                    /******form form from****************/
+
+     </script>
 
 
 

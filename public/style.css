@@ -20,7 +20,7 @@ html{
 /*-------------------------------------------------------*/
 
 #first-section{
-    background: url("https://lh4.googleusercontent.com/kVHV9fGfwSIQ577xVHUwTnIc7RP6wtN4d0dHOgUF0wRSBFXnqyiYnQeo_64AnJlIfz843ZWRabips2I2yWgj=w1280-h672-rw");
+    background: url("back.jpg");
     background-repeat:no-repeat; 
     height:100vh;
     width:100vw;
@@ -134,12 +134,14 @@ html{
         display: block; 
     }
     #toggle:checked + .nav-items{
-        display:block;
+    display:block;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width:160px;
+    z-index: 1;
         
     }
    
-    
-
 }
 
 @media (max-width:456px){
@@ -219,6 +221,10 @@ html{
           font-size:x-large;
       }
   }
+  .dot-box{
+    text-align: center;
+    
+  }
   
 
 /*----------------------------------------------------------------*/
@@ -247,7 +253,7 @@ html{
 }
 .service-desc{
 color:#666;
-margin-top:3%;
+margin-top:6%;
 }
 
 
@@ -339,11 +345,11 @@ line-height: 1.5;
   }
 
 
-/*---------------------------------------------------------___----------*/
+/*-----------------------------------------------------------__----------*/
 
 
 #fifth-section{
-    background: url(https://lh3.googleusercontent.com/8z91Pv5gHDaJzowb5MW9xXC1djtPegS3mxa43au632vbBKltuJ0cQfP_W-c5vtbMr1gJ5njiDlGSMO5UrgDa=w1280-h672-rw);
+    background: url(tt.jpg);
     height:auto;
     margin-top:10%;
     background-attachment: fixed;
@@ -358,7 +364,6 @@ line-height: 1.5;
     margin-right: 7%;
     margin-left: 7%;
     padding-bottom:3%;
-
 }
 .ec-year-desc{
 border:double;
@@ -367,17 +372,15 @@ margin-top:10%;
 font-size: 19px;
 padding: 15%;
 }
+
 .ec-year{
     font-size: xx-large;
     color:blanchedalmond;
-
-
 }
 .ec-desc{
     margin-top:2%;
     color:cornsilk;
-    font-family: fantasy;
-    font-weight: bolder;
+    font-weight:lighter;
 }
 
 
@@ -385,9 +388,7 @@ padding: 15%;
     .ec-wrap{
       grid-template-columns:auto auto;
     }
-  
   }
-
 
 @media (max-width:456px){
 
@@ -409,7 +410,6 @@ padding: 15%;
 
 
   }
-
 
 /*--------------------------------------------------------------*/
 #sixth-section{
@@ -512,6 +512,7 @@ q:after{
     display: inline-block;
     transition: background-color 0.6s ease;
     text-align: center;
+    cursor: pointer;
   }
 
 /*******************************************************/
@@ -550,7 +551,6 @@ q:after{
 #eighth-section{
     margin-top:8%;
     overflow:hidden;
-
 }
 
 .my-info{
@@ -581,7 +581,6 @@ margin-top:5%;
     border:none;
     cursor: pointer;
 }
-
 
 .info{
 font-size:23px;
@@ -645,8 +644,7 @@ input[type=text], textarea{
     }
   }
 
-
-
+  
   /*-----------------------------------------------------------------*/
 
   #footer{

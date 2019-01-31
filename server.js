@@ -4,7 +4,7 @@ const app=express();
 
 const bodyParser=require('body-parser');
 
-const urlencodedParser=bodyParser.urlencoded({extended:false});
+const urlencodedParser=bodyParser.urlencoded({extended:true});
 
 const fs=require('fs');
 
@@ -18,22 +18,6 @@ app.set('view engine','hbs');
 app.use('/public',express.static('public'));
 
 
-
-/* getting data from json */
-
-app.get('/',(req,res)=>{
-    fetch('https://api.myjson.com/bins/18tjrs').
-    then(result=>result.json()).
-    then((data)=>{
-        //console.log(data);
-    res.render("main",{data});
-    }).
-    catch((err)=>{
-        console.log(err);
-    });
-    
-});
-
 /* download cv */
 
 app.get('/download', function(req, res){
@@ -42,37 +26,38 @@ app.get('/download', function(req, res){
     });
 
 
+    /***api call */
 
-
-
-/* logging user data */
-
-app.post('/contact',urlencodedParser,function(req,res){
-    console.log(req.body);
-     //   let content= fs.readFileSync('info.json');
-       // let oldData=JSON.parse(content);
-
-        let newData={
-                "name":req.body.name,
-                "email":req.body.email,
-                "phone":req.body.phone,
-                "message":req.body.message
-            };
-        //oldData.push(newData);
-        let newObject=JSON.stringify(newData);
+    app.get('/',(req,res)=>{
+        fetch('https://api.myjson.com/bins/18tjrs').
+        then(result=>result.json()).
+        then((data)=>{
+            //console.log(data);
+        res.render("main",{data});
+        }).
+        catch((err)=>{
+            console.log(err);
+        });
         
-        fs.appendFileSync('info.json',newObject);
+    });
 
-    res.send("Thank-You your message has been sent.")
-});
+    /***from submit */
 
-
-
-
-
-
-
-
+    app.post('/resume', function(req, res) {
+    
+            let form = {
+                name: req.body.name,
+                email: req.body.email,
+                phone: req.body.phone,
+                message: req.body.message
+           }
+           console.log(form);
+           fs.appendFile('info.txt', JSON.stringify(form), function(err) {
+               if (err) throw err;
+               //console.log('Saved!');
+           });
+           res.send('your response have been submitted');
+        });
 
 
 
